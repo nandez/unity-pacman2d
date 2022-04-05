@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     private Animator animatorComponent;
     private Rigidbody2D rbComponent;
-    private Collider2D collider2D;
+
 
     private Vector2 nextPosition = Vector2.zero;
     private Vector2 currentDirection = Vector2.zero;
@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     {
         animatorComponent = GetComponent<Animator>();
         rbComponent = GetComponent<Rigidbody2D>();
-        collider2D = GetComponent<Collider2D>();
 
         // Iniciamos con la posición actual.
         nextPosition = transform.position;
@@ -54,6 +53,6 @@ public class Player : MonoBehaviour
         // Proyecta un linecast entre el jugador y la posición siguiente al jugador para
         // detectar si existe colisión con el jugador.
         var ray = Physics2D.Linecast((Vector2)transform.position + dir, transform.position);
-        return ray.collider == collider2D;
+        return ray.collider == GetComponent<Collider2D>();
     }
 }
