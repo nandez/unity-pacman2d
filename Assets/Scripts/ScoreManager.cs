@@ -22,6 +22,6 @@ public class ScoreManager : MonoBehaviour
 
     protected void UpdateHighScoreText()
     {
-        txtScore.text = $"{HighScore}";
+        txtScore.text = $"SCORE: {HighScore}";
     }
 }
